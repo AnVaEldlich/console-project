@@ -8,3 +8,24 @@ pequeño proyecto con python y mysql en consola
 
 """
 
+from usuarios import acciones
+
+hazEl = acciones.Acciones()
+print("""
+
+Bienvenido al sistema
+
+Acciones disponibles:
+
+1. Login
+2. Registro
+
+""")
+
+ac = input("Elige una accion: ")
+
+if ac == "2":
+   hazEl.registro()
+
+elif ac == "1":
+   hazEl.login()
