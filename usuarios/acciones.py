@@ -1,7 +1,8 @@
 import usuarios.usuario as modelo
+import usuarios.notas.acciones as notas_acciones
 
 class Acciones:
-    def registro(self):
+    def registro(self, usuario):
         print("\nOk, vamos a registrarte")
         nombre = input("Introduce tu nombre: ")
         apellido = input("Introduce tu apellido: ")
@@ -55,22 +56,19 @@ class Acciones:
         """)
 
         accion = input("Elige una accion: ")
+        hazEl = notas_acciones.Acciones()
 
         if accion == "1":
-            print("\nOk, vamos a crear una nota")
-            titulo = input("Introduce el titulo de la nota: ")
-            descripcion = input("Introduce el contenido de la nota: ")
-
-            usuario.crearNota(titulo, descripcion)
-            print("\nPerfecto has creado la nota con exito")
+            hazEl.crear(usuario)
+            self.proximasAcciones(usuario)
 
         elif accion == "2":
-            print("\nOk, vamos a mostrar tus notas")
-            usuario.mostrarNotas()
+            hazEl.mostrar(usuario)
+            self.proximasAcciones(usuario)
 
         elif accion == "3":
-            print("\nOk, vamos a borrar una nota")
-            usuario.borrarNota()
+            hazEl.borrar(usuario)
+            self.proximasAcciones(usuario)
 
         elif accion == "4":
             print(f"\nOk, vamos a salir, hasta pronto {usuario[1]}")
