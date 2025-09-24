@@ -20,4 +20,10 @@ class Nota:
         db.commit()
 
         return [cursor.rowcount, self]
+
+    def listar(self):
+        sql = "SELECT * FROM notas WHERE usuario_id = %s"
+        cursor.execute(sql, (self.usuario_id,))
+        notas = cursor.fetchall()
+        return notas
         

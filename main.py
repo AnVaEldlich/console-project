@@ -31,5 +31,3 @@ elif ac == "1":
    hazEl.login()
 
 
-// hkhlkhl// jkjkjk// jkjkjk
-// jkjkjk

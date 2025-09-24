@@ -14,3 +14,11 @@ class Acciones:
             print("\nPerfecto has creado la nota con exito")
         else:
             print("\nNo se ha creado la nota correctamente")
+
+    def mostrar(self, usuario):
+        print(f"\nOk, {usuario[1]} vamos a mostrar tus notas")
+        nota = modelo.Nota(usuario[0], "", "")
+        notas = nota.listar()
+
+        print(notas)
+
