@@ -20,5 +20,9 @@ class Acciones:
         nota = modelo.Nota(usuario[0], "", "")
         notas = nota.listar()
 
-        print(notas)
+        for nota in notas:
+            print("\n--------------------------------")
+            print(nota[2])
+            print(nota[3])
+            print("--------------------------------\n")
 
