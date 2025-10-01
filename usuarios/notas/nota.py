@@ -14,8 +14,6 @@ class Nota:
     def guardar(self):
         sql = "INSERT INTO notas VALUES (null, %s, %s, %s, Now())"
         nota = (self.usuario_id, self.titulo, self.descripcion)
-        
-        
         cursor.execute(sql, nota)
         db.commit()
 
@@ -26,4 +24,12 @@ class Nota:
         cursor.execute(sql, (self.usuario_id,))
         notas = cursor.fetchall()
         return notas
+    
+    def eliminar(self, titulo): 
+        sql = "DELETE FROM notas WHERE usuario_id = %s AND titulo = %s"
+        cursor.execute(sql, (self.usuario_id, titulo))
+        db.commit()
+        return [cursor.rowcount, self]
         
+
+ 

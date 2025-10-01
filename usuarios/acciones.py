@@ -2,7 +2,7 @@ import usuarios.usuario as modelo
 import usuarios.notas.acciones as notas_acciones
 
 class Acciones:
-    def registro(self, usuario):
+    def registro(self):
         print("\nOk, vamos a registrarte")
         nombre = input("Introduce tu nombre: ")
         apellido = input("Introduce tu apellido: ")
